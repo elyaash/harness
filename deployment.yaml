@@ -21,7 +21,7 @@ spec:
     metadata:
       # Labels applied to each Pod created by this Deployment
       labels:
-        app: mmy-web-middleware
+        app: my-web-middleware
     spec:
       # Defines the containers to run within each Pod
       containers:
