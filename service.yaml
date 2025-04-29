@@ -6,6 +6,7 @@ kind: Service
 metadata:
   # Name of the Service object
   name: web-middleware
+  namespace: elyaash-dev
 spec:
   # Selects the Pods that this Service will route traffic to
   selector:

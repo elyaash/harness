@@ -5,6 +5,7 @@ kind: Deployment
 metadata:
   # Name of the Deployment object within Kubernetes
   name: web-middleware-deployment
+  namespace: elyaash-dev
   # Labels help organize and select Kubernetes objects
   labels:
     app: my-web-middleware
