@@ -1,0 +1,22 @@
+# === Kubernetes Service ===
+# This section defines a stable network endpoint (IP address and DNS name)
+# within the cluster to access the Pods managed by the Deployment.
+apiVersion: v1
+kind: Service
+metadata:
+  # Name of the Service object
+  name: web-middleware
+spec:
+  # Selects the Pods that this Service will route traffic to
+  selector:
+    app: web-middleware # Must match the labels on the Pods
+  # Defines how the Service exposes the Pods' ports
+  ports:
+    - protocol: TCP
+      port: 80 # The port the Service will listen on within the cluster
+      targetPort: 80 # The port on the target Pods (containerPort) to forward traffic to
+  # Type of Service:
+  # ClusterIP: Exposes the Service on an internal IP only (default). Good for Ingress.
+  # NodePort: Exposes the Service on each Node's IP at a static port.
+  # LoadBalancer: Creates an external load balancer (if supported by cloud provider).
+  type: ClusterIP

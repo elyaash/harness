@@ -1,0 +1,30 @@
+# === Kubernetes Deployment ===
+# This section defines how to run multiple instances (Pods) of your application container.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Name of the Deployment object within Kubernetes
+  name: web-middleware-deployment
+  # Labels help organize and select Kubernetes objects
+  labels:
+    app: my-web-middleware
+spec:
+  # Specifies the desired number of running Pods (application instances)
+  replicas: 2
+  # Tells the Deployment how to find the Pods it should manage
+  selector:
+    matchLabels:
+      app: my-web-middleware # Must match the labels defined in the Pod template below
+  # This is the blueprint for the Pods that the Deployment will create
+  template:
+    metadata:
+      # Labels applied to each Pod created by this Deployment
+      labels:
+        app: mmy-web-middleware
+    spec:
+      # Defines the containers to run within each Pod
+      containers:
+        - name: web-middleware-container # A descriptive name for the container
+          image: prakashrajput0712769/harness-builds:latest # Using a specific, lightweight Nginx image
+          ports:
+            - containerPort: 80 # The port the application inside the container listens on
