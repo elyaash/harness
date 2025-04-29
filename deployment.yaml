@@ -26,6 +26,6 @@ spec:
       # Defines the containers to run within each Pod
       containers:
         - name: web-middleware-container # A descriptive name for the container
-          image: prakashrajput0712769/harness-builds:<+execution.steps.Echo.output.outputVariables.TAG_NAME>
+          image: prakashrajput0712769/harness-builds:latest
           ports:
             - containerPort: 3000 # The port the application inside the container listens on
