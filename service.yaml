@@ -10,7 +10,7 @@ metadata:
 spec:
   # Selects the Pods that this Service will route traffic to
   selector:
-    app: web-middleware # Must match the labels on the Pods
+    app: my-web-middleware # Must match the labels on the Pods
   # Defines how the Service exposes the Pods' ports
   ports:
     - protocol: TCP
