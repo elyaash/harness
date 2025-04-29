@@ -15,7 +15,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80 # The port the Service will listen on within the cluster
-      targetPort: 80 # The port on the target Pods (containerPort) to forward traffic to
+      targetPort: 3000 # The port on the target Pods (containerPort) to forward traffic to
   # Type of Service:
   # ClusterIP: Exposes the Service on an internal IP only (default). Good for Ingress.
   # NodePort: Exposes the Service on each Node's IP at a static port.
