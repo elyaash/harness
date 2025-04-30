@@ -1,4 +1,4 @@
-# === Kubernetes Deployment ===
+# == Kubernetes Deployment ==
 # This section defines how to run multiple instances (Pods) of your application container.
 apiVersion: apps/v1
 kind: Deployment
