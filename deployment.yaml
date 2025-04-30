@@ -29,3 +29,21 @@ spec:
           image: "{{ .Values.image.repository }}"
           ports:
             - containerPort: 3000 # The port the application inside the container listens on
+          livenessProbe:
+            httpGet:
+              path: /books
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            successThreshold: 1
+            failureThreshold: 3
+            timeoutSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+            timeoutSeconds: 2
